@@ -2,6 +2,7 @@
 // Name: Rayyan Nasir
 // Roll No: BSCS22038
 
+#[derive(Drop)]
 enum TrafficLight {
     Red,
     Yellow,
@@ -9,10 +10,13 @@ enum TrafficLight {
 }
 
 fn main() {
-    // TODO: Create a variable of type TrafficLight and assign a value.
-    // TODO: Print the enum value.
+    let current = TrafficLight::Green;
 
-    // Example:
-    // let current = TrafficLight::Green;
-    // println!("Current light: {:?}", current);
+    let light_str: ByteArray = match current {
+        TrafficLight::Red => "Red",
+        TrafficLight::Yellow => "Yellow",
+        TrafficLight::Green => "Green",
+    };
+
+    println!("Current light: {}", light_str);
 }
